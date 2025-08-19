@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="=" UTF-8 />
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0" />
+    <title>Beauty Launch</title>
+    <link rel="stylesheet" href="style.css" />
+    <!--Linking Font Awesome-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!--Header-->
+    <header>
+      <nav class="navbar section-content">
+        <a href="#" class="nav-logo">
+          <h2 class="logo-text">Beauty Launch</h2>
+        </a>
+        <ul class="nav-menu">
+          <button id="menu-close-button" class="fas fa-times"></button>
+          <li class="nav-item">
+            <a href="#home" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#about" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="#services" class="nav-link">Our Services</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link">Contact</a>
+          </li>
+        </ul>
+        <button id="menu-open-button" class="fas fa-bars"></button>
+      </nav>
+    </header>
+    <main>
+      <!--Hero section-->
+      <section class="hero-section" id="home">
+        <div class="section-content">
+          <div class="hero-details">
+            <h2 class="title">Best Parlour</h2>
+            <h3 class="subtitle">For Ladies and Kids</h3>
+            <p class="description">
+              Welcome to Beauty Launch, the place where elegance meets artistry.
+              From flawless bridal looks to everyday glow-ups, our talented
+              stylists and makeup artists bring out the very best in you.
+              Whether you’re preparing for your big day, a special event, or
+              simply want a touch of self-care, we’re here to make you look and
+              feel stunning
+            </p>
+            <div class="buttons">
+              <a href="#" id="openModal" class="button order-now">
+                Book an Appointment</a
+              >
+            </div>
+          </div>
+          <div class="hero-image-wrapper">
+            <img src="images/Logo.jpg" alt="Logo" class="hero-image" />
+          </div>
+        </div>
+        <!-- Booking Modal-->
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 class="bookingfields">Book Your Appointment</h2>
+            <p class="bookingfields">
+              Fill in your details and we’ll confirm shortly.
+            </p>
+            <div class="bookingfields">
+              <input type="text" placeholder="Your Name" />
+            </div>
+            <div class="bookingfields">
+              <input type="text" placeholder="Your phone number" />
+            </div>
+            <div class="bookingfields">
+              <textarea
+                placeholder="Service Needed"
+                class="bookingtextarea"
+              ></textarea>
+            </div>
+            <button class="button btn-booking">Submit</button>
+          </div>
+        </div>
+      </section>
+      <!--About Section-->
+      <section class="about-section" id="about">
+        <div class="section-content">
+          <div class="about-image-wrapper">
+            <img src="images/Logo.jpg" alt="About" class="about-image" />
+          </div>
+          <div class="about-details">
+            <h2 class="section-title">About Us</h2>
+            <p class="text">
+              At Beauty Launch, we believe beauty is more than just how you look
+              — it's how you feel. Our team of passionate stylists, makeup
+              artists, and beauty experts are committed to making every client
+              feel confident, cared for, and truly radiant. With a warm,
+              welcoming atmosphere and personalized service, we make every visit
+              a beautiful experience.
+            </p>
+            <div class="social-link-list">
+              <a href="#" class="social-link"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a href="#" class="social-link"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="#" class="social-link"><i class="fa-brands fa-x"></i></a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--Services section-->
+      <section class="menu-section" id="services">
+        <h2 class="section-title">Our Services</h2>
+        <div class="section-content">
+          <ul class="menu-list">
+            <li class="li-menu-item">
+              <img src="images/girl.jpeg" alt="Hair-Care" class="menu-image" />
+              <h3 class="name">Hair Care</h3>
+              <p class="text">Style and treat your hair</p>
+            </li>
+            <li class="li-menu-item">
+              <img
+                src="images/Kerala_saree.jpeg"
+                alt="Bride"
+                class="menu-image"
+              />
+              <h3 class="name">Bridal makeup</h3>
+              <p class="text">All kind of bridal makeups available</p>
+            </li>
+            <li class="li-menu-item">
+              <img src="images/gym.jpeg" alt="gym" class="menu-image" />
+              <h3 class="name">Ladies only gym</h3>
+              <p class="text">Taking care of your health with beauty</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!--Contact section-->
+      <section class="contact-section" id="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="section-content">+7570323962</div>
+      </section>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
