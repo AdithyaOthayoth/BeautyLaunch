@@ -361,7 +361,8 @@ header .navbar {
     color: var(--white-color);
   }
   .hero-section {
-    padding-top: 100px; /* space for fixed header */
+    padding-top: 10px; /* space for fixed header */
+    min-height: 50vh;
   }
   .hero-section .section-content {
     gap: 30px;
