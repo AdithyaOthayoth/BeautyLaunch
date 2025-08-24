@@ -2,7 +2,7 @@
   /* Colors */
   --white-color: #fff;
   --dark-color: #252525;
-  --primary-color: #3b141c;
+  --primary-color: #4c1130;
   --secondary-color: #f3961c;
   --light-pink-color: #faf4f5;
   --medium-gray-color: #ccc;
@@ -270,6 +270,34 @@ header .navbar {
   aspect-ratio: 1;
 }
 
+.contact-section {
+  width: 100%;
+  background: var(--white-color);
+  padding-bottom: 30px;
+}
+.contact-section .section-title {
+  padding: 30px;
+}
+.contact-section .section-content {
+  text-align: center;
+}
+.footer-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: var(--primary-color);
+}
+
+.footer-text-left {
+  font-size: 0.9rem;
+  color: var(--white-color);
+}
+
+.footer-text-right {
+  font-size: 0.9rem;
+  color: var(--white-color);
+}
 /* Responsive styles */
 @media screen and (max-width: 1024px) {
   .menu-section .menu-list .li-menu-item {
