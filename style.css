@@ -6,7 +6,6 @@
   --secondary-color: #f3961c;
   --light-pink-color: #faf4f5;
   --medium-gray-color: #ccc;
-  --error-color: #d10000;
 
   /* Font size */
   --font-size-s: 0.9rem;
@@ -244,71 +243,44 @@ header .navbar {
 .contact-section {
   width: 100%;
   background: var(--white-color);
-  padding-bottom: 30px;
+  padding: 50px 20px;
 }
 .contact-section .section-title {
   padding: 30px;
 }
+.contact-section .section-content {
+  text-align: center;
+}
+
 .contact-wrapper {
   display: flex;
-  align-items: center; /* ⬅️ centers vertically */
-  justify-content: space-between;
+  flex-wrap: wrap;
   gap: 30px;
-  max-width: var(--site-max-width);
-  margin: 0 auto;
-  padding: 20px;
+  align-items: center;
+  justify-content: space-between;
 }
-/* Left side */
+
 .contact-details {
-  flex: 1; /* smaller width */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  padding-left: 20px;
 }
-
-.contact-map {
-  flex: 2; /* bigger width */
-}
-
-.contact-info {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.contact-info li {
+.contact-details ul li {
+  margin: 10px 0;
   font-size: var(--font-size-m);
   color: var(--dark-color);
-  margin: 15px 0;
-  display: flex;
-  align-items: center;
-  gap: 10px;
 }
 
-.contact-info li i {
-  color: var(--secondary-color);
-  font-size: var(--font-size-l);
-}
-
-/* Right side */
 .contact-map {
   flex: 2;
-  height: 350px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
-
 .contact-map iframe {
   width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-/* Responsive (stack on small screens) */
-@media screen and (max-width: 900px) {
-  .contact-wrapper {
-    flex-direction: column;
-  }
-  .contact-map {
-    height: 250px;
-  }
+  height: 400px;
+  border: none;
+  border-radius: var(--border-radius-s);
 }
 
 /* Footer */
@@ -338,20 +310,35 @@ header .navbar {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
 }
 .modal-content {
-  background: white;
+  background: var(--white-color);
   padding: 20px;
-  margin: 10% auto;
+  border-radius: var(--border-radius-s);
   width: 90%;
-  max-width: 300px;
-  border-radius: 8px;
+  max-width: 400px;
   text-align: center;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease;
 }
 .close {
   float: right;
   font-size: 20px;
   cursor: pointer;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* Responsive styles */
@@ -419,9 +406,9 @@ header .navbar {
   .navbar #menu-open-button {
     color: var(--white-color);
   }
+
   .hero-section {
-    padding-top: 10px; /* space for fixed header */
-    min-height: 50vh;
+    padding-top: 100px;
   }
   .hero-section .section-content {
     gap: 30px;
@@ -454,6 +441,15 @@ header .navbar {
   .menu-section .menu-list .li-menu-item {
     width: 100%;
   }
+
+  .contact-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+  .contact-details {
+    padding-left: 0;
+    align-items: center;
+  }
 }
 
 /* Small phones */
@@ -472,109 +468,5 @@ header .navbar {
   .footer-section {
     flex-direction: column;
     gap: 10px;
-  }
-}
-/* Modal */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(4px);
-}
-
-.modal-content {
-  background: var(--white-color);
-  padding: 30px 25px;
-  margin: 10% auto;
-  width: 90%;
-  max-width: 400px;
-  border-radius: var(--border-radius-m);
-  text-align: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  position: relative;
-  animation: slideDown 0.3s ease-out;
-}
-
-/* Close button */
-.close {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 28px;
-  font-weight: var(--font-weight-bold);
-  color: var(--dark-color);
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.close:hover {
-  color: var(--secondary-color);
-}
-
-/* Heading and paragraph */
-.modal-content h2 {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-semibold);
-  color: var(--primary-color);
-  margin-bottom: 10px;
-}
-
-.modal-content p {
-  font-size: var(--font-size-m);
-  color: var(--dark-color);
-  margin-bottom: 20px;
-}
-
-/* Inputs and textarea */
-.bookingfields input,
-.bookingfields .services-dropdown {
-  width: 100%;
-  padding: 12px 15px;
-  margin-bottom: 15px;
-  border: 1px solid var(--medium-gray-color);
-  border-radius: var(--border-radius-s);
-  font-size: var(--font-size-n);
-  font-weight: var(--font-weight-normal);
-  outline: none;
-}
-
-/* Button */
-.btn-booking {
-  background-color: var(--secondary-color);
-  color: var(--white-color);
-  padding: 12px 25px;
-  font-size: var(--font-size-m);
-  font-weight: var(--font-weight-medium);
-  border-radius: var(--border-radius-s);
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.btn-booking:hover {
-  background-color: var(--primary-color);
-  color: var(--white-color);
-}
-.modal-content .error-message {
-  display: none;
-  color: var(--error-color);
-  font-size: var(--font-size-m);
-  margin-top: 10px;
-  text-align: center;
-}
-
-/* Animation */
-@keyframes slideDown {
-  from {
-    transform: translateY(-50px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
   }
 }
