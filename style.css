@@ -6,6 +6,7 @@
   --secondary-color: #f3961c;
   --light-pink-color: #faf4f5;
   --medium-gray-color: #ccc;
+  --error-color: #d10000;
 
   /* Font size */
   --font-size-s: 0.9rem;
@@ -248,8 +249,66 @@ header .navbar {
 .contact-section .section-title {
   padding: 30px;
 }
-.contact-section .section-content {
-  text-align: center;
+.contact-wrapper {
+  display: flex;
+  align-items: center; /* ⬅️ centers vertically */
+  justify-content: space-between;
+  gap: 30px;
+  max-width: var(--site-max-width);
+  margin: 0 auto;
+  padding: 20px;
+}
+/* Left side */
+.contact-details {
+  flex: 1; /* smaller width */
+}
+
+.contact-map {
+  flex: 2; /* bigger width */
+}
+
+.contact-info {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-info li {
+  font-size: var(--font-size-m);
+  color: var(--dark-color);
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-info li i {
+  color: var(--secondary-color);
+  font-size: var(--font-size-l);
+}
+
+/* Right side */
+.contact-map {
+  flex: 2;
+  height: 350px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Responsive (stack on small screens) */
+@media screen and (max-width: 900px) {
+  .contact-wrapper {
+    flex-direction: column;
+  }
+  .contact-map {
+    height: 250px;
+  }
 }
 
 /* Footer */
@@ -473,7 +532,7 @@ header .navbar {
 
 /* Inputs and textarea */
 .bookingfields input,
-.bookingfields textarea {
+.bookingfields .services-dropdown {
   width: 100%;
   padding: 12px 15px;
   margin-bottom: 15px;
@@ -482,11 +541,6 @@ header .navbar {
   font-size: var(--font-size-n);
   font-weight: var(--font-weight-normal);
   outline: none;
-}
-
-.bookingfields textarea {
-  resize: none;
-  min-height: 80px;
 }
 
 /* Button */
@@ -504,6 +558,13 @@ header .navbar {
 .btn-booking:hover {
   background-color: var(--primary-color);
   color: var(--white-color);
+}
+.modal-content .error-message {
+  display: none;
+  color: var(--error-color);
+  font-size: var(--font-size-m);
+  margin-top: 10px;
+  text-align: center;
 }
 
 /* Animation */

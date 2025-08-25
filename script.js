@@ -29,12 +29,17 @@ $(document).ready(function() {
 function sendToWhatsApp() {
     let name = document.getElementById("name").value;
     let phone = document.getElementById("phone").value;
-    let message = document.getElementById("message").value;
-  
-    let url = "https://wa.me/447570323962?text="
-      + "Name: " + name + "%0a"
-      + "Phone: " + phone + "%0a"
-      + "Message: " + message;
-  
-    window.open(url, '_blank').focus();
+    let message = document.getElementById("services-dropdown");
+    let selectedText = message.options[message.selectedIndex].text;
+    if(!name || !phone || !selectedText){
+        document.getElementById("errormessage").style.display = "block";
+        return;
+    }
+    else{
+        let url = "https://wa.me/447570323962?text="
+        + "Name: " + name + "%0a"
+        + "Phone: " + phone + "%0a"
+        + "Message: " + selectedText;
+        window.open(url, '_blank').focus();
+    }
   }
